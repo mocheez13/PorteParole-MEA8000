@@ -13,7 +13,7 @@ This is an evidence-based check of the **private** repository. It does **not** c
 ## Still unverified
 
 1. Clean Windows checkout: actual `git apply --check`, patch application, Win32 build, and runtime audio behavior with slot 4. Do this on a clean checkout using the exact upstream commit.
-2. Provenance: the project owner clarifies that **Claude worked only on the Vox Machina application software and did not develop the Porte-Parole card emulation**. The AppleWin card and MEA8000 emulation were developed through Codex. Older project documentation mentions Claude's earlier software materials, but those references alone do not establish code reuse in the emulator. The original Ediciel/Philips documentation and MAME are cited as technical references. **The exact third-party code provenance still requires source-level verification before public redistribution.**
+2. Provenance: the AppleWin card and MEA8000 emulation were developed for this project. The project's original technical notes cite earlier software materials and conceptual comparison with MAME; these references alone do not establish code reuse. **Exact third-party code provenance still requires source-level verification before public redistribution.**
 3. Rights and complete notices: independent license compliance review needed before any public release. Do not simply copy a new license over the existing source notices without checking the original contributions.
 4. The original export omitted several auxiliary test scripts and data described in its documentation; full integration tests have not been reproduced here.
 
@@ -29,7 +29,7 @@ git apply "C:\path\to\AppleWin-integration.patch"
 # Build AppleWin Release Win32 using the relevant installed Visual Studio toolchain
 ```
 
-Use only copies; do not overwrite the working Vox Machina or DS:3 environments.
+Use only a separate clean checkout; do not overwrite any existing working projects.
 
 ## Third-party reference sources
 
