@@ -14,7 +14,7 @@ This is an evidence-based check of the **private** repository. It does **not** c
 
 1. Clean Windows checkout: actual `git apply --check`, patch application, Win32 build, and runtime audio behavior with slot 4. Do this on a clean checkout using the exact upstream commit.
 2. Provenance: the AppleWin card and MEA8000 emulation were developed for this project. The project's original technical notes cite earlier software materials and conceptual comparison with MAME; these references alone do not establish code reuse. **Exact third-party code provenance still requires source-level verification before public redistribution.**
-3. Rights and complete notices: independent license compliance review needed before any public release. Do not simply copy a new license over the existing source notices without checking the original contributions.
+3. Rights and notices: the full upstream GPLv2 text has now been added as `LICENSE`; original source SPDX headers remain in place. Independent provenance/ownership and third-party copyright review remain necessarily limited; the available source comparison is documented in `LICENSING-REVIEW.md`.
 4. The original export omitted several auxiliary test scripts and data described in its documentation; full integration tests have not been reproduced here.
 
 ## Suggested reproduction commands
@@ -36,4 +36,4 @@ Use only a separate clean checkout; do not overwrite any existing working projec
 - [AppleWin main repository](https://github.com/AppleWin/AppleWin)
 - [MAME MEA8000 source](https://sources.debian.org/src/mame/0.289%2Bdfsg1-1/src/devices/sound/mea8000.cpp) — attributed to Antoine Miné, BSD-3-Clause; **not proof** that this repository copied or did not copy it.
 
-**Release status: keep private until provenance and a clean Win32 integration build are confirmed.**
+**Release status: experimental prototype. Source license text and regression/patch checks are present, but ownership/provenance beyond the checked sources and a full integrated Windows build are not certified.**
