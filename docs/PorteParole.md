@@ -8,9 +8,9 @@ Date : 31 octobre 2026. Prototype de dÃ©veloppement, fidÃ©litÃ© matÃ©rie
 ## Origine et isolation
 
 Base AppleWin officielle : commit `4a43bcdb8e1cb908662f4c270ca84f309a97802f`.
-Arbre indÃ©pendant : `C:\VOX MACHINA\developpement\AppleWin-PorteParole`.
+Arbre de développement : copie indépendante d'AppleWin.
 Aucune source ni aucun exÃ©cutable DS:3 Revival utilisÃ© ou modifiÃ©.
-Les originaux VOX MACHINA restent dans `origines` et dans le ZIP de Claude.
+Les logiciels et données d'origine sont conservés à part du code de l'émulateur.
 Leurs copies horodatÃ©es sont dans `references`, avec manifestes SHA-256.
 Avant modification d'AppleWin, ses sources concernÃ©es et son binaire compilÃ© sans Porte-Parole
 ont Ã©tÃ© sauvegardÃ©s dans `references\AppleWin_avant_PorteParole_20261031_172141`.
@@ -39,7 +39,7 @@ produit un arrÃªt progressif. ROE est mÃ©morisÃ©, sans inventer de raccord
 La synthÃ¨se utilise quatre rÃ©sonateurs en cascade, une source dent de scie ou du bruit,
 des interpolations et un flux mono 48 kHz. Les historiques survivent aux Ã©critures et aux
 frontiÃ¨res des blocs hÃ´tes. Le gain est fixe, sans normalisation par phrase.
-Le profil analogique provisoire reprend l'hypothÃ¨se de Claude : passe-bas Butterworth
+Le profil analogique provisoire reprend une hypothÃ¨se de calibration provisoire : passe-bas Butterworth
 d'ordre 4 Ã  3 kHz et passe-haut d'ordre 2 Ã  120 Hz.
 Le buffer hÃ´te est continu, enregistrÃ© auprÃ¨s de SoundCore pour la gestion du son et des dialogues.
 L'accÃ©lÃ©ration explicitement demandÃ©e par l'utilisateur avance le matÃ©riel mais coupe l'audio hÃ´te.
@@ -53,7 +53,7 @@ La restauration exacte du cÅ“ur est testÃ©e ; le parcours complet F11/F12 A
 
 * Manuel local `origines/PORTE PAROLE/doc/Ediciel Porte Parole.pdf`, annexes 2, 5 et 6.
 * Logiciel Ediciel original `PORTEPAROLE`, 174 octets Ã  $0300.
-* ZIP de Claude, notamment `EMULATION_CARTE.md`, `outils/mea8000.py`, `apple2/engine.s`.
+* Notes de développement et prototypes logiciels de référence non distribués avec ce dépôt.
 * Documentation Philips MEA8000 et comparaison conceptuelle avec le cÅ“ur MAME.
 
 Le cÅ“ur C++ a Ã©tÃ© Ã©crit pour ce prototype. Aucun composant MAME n'est liÃ© et aucune
@@ -93,16 +93,13 @@ et produit les WAV et statistiques dans la session indiquÃ©e par `prototype-se
   quatre durÃ©es, sous-alimentation, STOP/CONT, indÃ©pendance aux dÃ©coupages,
   restauration exacte des Ã©tats et gÃ©nÃ©ration sonore non nulle.
 * Lecteur Ediciel : EDILOGO1-0 et EDILOGO2-1, en fente 4.
-* Lecteur de Claude : BONJOURH en fente 4, CHATF en fente 1, EDILOGO1-0 en fente 7.
-* ArrÃªt ESC du lecteur de Claude : confirmÃ© par le code de retour ABORT=1.
+* Lecteur de test : BONJOURH en fente 4, CHATF en fente 1, EDILOGO1-0 en fente 7.
+* ArrÃªt ESC du lecteur de test : confirmÃ© par le code de retour ABORT=1.
 * Aucun octet refusÃ© et aucun Ã©chantillon Ã©crÃªtÃ© dans ces cinq lectures complÃ¨tes.
 * Le pilote Ediciel fourni lit un octet au-delÃ  de la longueur du message avant ses
   quatre zÃ©ros de fin. Le banc l'exerce avec un octet sentinelle $A5, sans corriger le pilote.
 * AppleWin rÃ©el : dÃ©marrage du logiciel Porte-Parole original, saisie/conversion et
   retour Ã  l'interface aprÃ¨s demande de lecture.
-* AppleWin rÃ©el : VOX MACHINA atteint son interface sur IIe 128 Ko, convertit BA en
-  phonÃ©tique et revient Ã  Â« PrÃªt. RETURN dit le texte, CTRL-R le redit. Â» aprÃ¨s lecture,
-  sans message de carte absente. Cela ne constitue pas une validation Ã  l'oreille.
 
 Les rendus hors ligne et le retour de l'interface ne constituent pas une validation
 Ã  l'oreille de la sortie DirectSound ni une comparaison complÃ¨te avec une vraie carte.
