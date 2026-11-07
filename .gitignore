@@ -1,0 +1,28 @@
+# Local build and test outputs
+/build/
+/out/
+/Debug/
+/Release/
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.lib
+test_mea8000
+test_mea8000.exe
+__pycache__/
+*.pyc
+.vs/
+.vscode/
+.DS_Store
+
+# Never upload private originals or commercial media
+*.dsk
+*.do
+*.po
+*.nib
+*.woz
+*.2mg
