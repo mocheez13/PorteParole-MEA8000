@@ -1,0 +1,16 @@
+MEA8000 C++14 standalone regression test:
+PASS: 187 MEA8000 checks
+
+Git patch syntax/stat parse:
+ AppleWin-VS2022.vcxproj         |    3 +++
+ AppleWin-VS2022.vcxproj.filters |    9 +++++++++
+ AppleWin-VS2026.vcxproj         |    3 +++
+ AppleWin-VS2026.vcxproj.filters |    9 +++++++++
+ source/Card.cpp                 |    5 +++++
+ source/Card.h                   |    1 +
+ source/CardManager.cpp          |    5 +++++
+ source/CmdLine.cpp              |    4 ++++
+ source/Windows/AppleWin.cpp     |    3 ++-
+ 9 files changed, 41 insertions(+), 1 deletion(-)
+
+NOTE: No full upstream AppleWin checkout was used for git apply --check or MSVC build.
