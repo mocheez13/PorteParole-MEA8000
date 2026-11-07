@@ -1,8 +1,31 @@
-# Porte-Parole / MEA8000: Apple II peripheral emulation
+# Ediciel Porte-Parole / Philips MEA8000
 
-**Source-only integration and portability package (prototype v0.2).**
+**Preserving a French-speaking Apple II expansion card from 1984.**
 
-This repository candidate contains an independently written, header-only C++14 MEA8000 synthesis model and a Porte-Parole expansion-card integration for an AppleWin fork. The goal is to help developers integrate the peripheral into other Apple II emulators. **No original commercial disk images, voice banks, or software are included.**
+> Porte-Parole spoke French on an Apple II long before speech synthesis became a standard desktop feature. This repository documents and emulates its expansion card and Philips MEA8000 speech synthesizer.
+
+## A little history
+
+**Porte-Parole** was a French speech-synthesis expansion card and software package distributed by **Ediciel / Matra-Hachette** for the **Apple II family**. It was already commercially available in **October 1984**: the contemporary magazine *Golden* (issue 10, November 1984, p. 33) reviewed the card, software and book as a package priced at **2,000 French francs**, with the card alone offered at **1,395 francs**.
+
+The supplied software converted typed French text into audible speech and allowed users to edit speech parameters graphically. Speech could be embedded into other Apple II programs; the package also offered ways to explore expressive intonation, musical notes and sound effects. The manufacturer's period advertisement presented it as a way to give the Apple a virtually unlimited French vocabulary.
+
+At the heart of the speech-generation technology is the **Philips MEA8000**, a formant-based speech synthesizer. Rather than storing whole sentences as sampled audio, it produces speech from compact control frames describing pitch, amplitude and vocal resonances. The MEA8000 uses a voiced or noise excitation source and four resonant filters.
+
+This project recreates the **card and speech chip behavior** in software, so that historical Apple II applications can use a simulated Porte-Parole. The emulation was implemented with **Codex** for an AppleWin fork, independently of the separate **Vox Machina application** developed with Claude.
+
+### Period references
+
+- *Golden*, no. 10, November 1984, p. 33: contemporary review, commercial availability, prices and speech editor. [Digitized issue](https://mirrors.apple2.org.za/ftp.apple.asimov.net/documentation/magazines/golden/golden10.pdf).
+- Ediciel period advertising/catalogue: original product description, French text-to-speech, programming use and graphical voice editor. [Period catalogue scan](https://www.mocagh.org/sir-tech/ediciel-catalog.pdf).
+- *Haut-Parleur*, no. 1722, November 1985, p. 91: technical description of MEA8000 control parameters. [Magazine scan](https://retronik.silicium.org/DOCUMENTS/revues/haut-parleur/1985/HP1722_11-1985.pdf).
+- [Philips MEA8000 technical background](https://www.wide-dot.com/mea8000.html): formant synthesis and further technical references.
+
+## Preservation project
+
+This repository provides a **standalone C++14 MEA8000 synthesis model**, an **AppleWin-specific Porte-Parole expansion-card implementation**, a patch for a known AppleWin revision, regression tests and porting notes for other Apple II emulator developers.
+
+No commercial Apple II disk images, speech banks or proprietary original software are distributed. A photograph of the original hardware can be added later, once a suitable rights-cleared image is supplied.
 
 ## Contents
 
