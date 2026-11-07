@@ -40,7 +40,7 @@ Le helper partagé d'AppleWin n'a pas été modifié.
 ## Mesure réelle après correction
 
 Une disquette de diagnostic distincte lit automatiquement les messages 1 et 2.
-Les binaires PORTEPAROLE et LOGO1.R sont extraits sans modification du disque de Claude.
+Les binaires PORTEPAROLE et LOGO1.R sont extraits sans modification d'un disque de test.
 La trace après correction compte 5935
 soumissions pendant la synthèse et **zéro repositionnement** pendant ces deux messages.
 La réserve observée pendant la synthèse reste environ entre 83 et 140 ms.
@@ -54,7 +54,7 @@ Le contrôle à l'oreille par l'utilisateur reste nécessaire.
 
 * Compilation Release Win32, VS2026 v145, avec le test CPU6502 du projet : réussie.
 * 187 vérifications du cœur passent, dont le scénario de clic et la reprise d'état pendant sa décroissance.
-* Les six essais des lecteurs 6502 Ediciel et Claude passent encore.
+* Les six essais des lecteurs 6502 de test passent encore.
 * Leurs rendus isolés sont identiques bit à bit aux références v0.1 : pas de modification
   des phrases isolées pour masquer le problème de transport audio.
 * Sept banques EdiLogo comparées en enchaînement, avec rendus v01/v02 conservés.
