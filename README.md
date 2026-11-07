@@ -1,5 +1,9 @@
 # Ediciel Porte-Parole / Philips MEA8000
 
+![AI-enhanced recreation of the Ediciel Porte-Parole Apple II speech card](docs/images/porte-parole-card.png)
+
+*AI-enhanced recreation based on a historical photograph attributed to apple2.org. For illustration only; not a reliable component-level reference.*
+
 **Preserving a French-speaking Apple II expansion card from 1984.**
 
 > Porte-Parole spoke French on an Apple II long before speech synthesis became a standard desktop feature. This repository documents and emulates its expansion card and Philips MEA8000 speech synthesizer.
