@@ -232,7 +232,7 @@ private:
     }
     double OutputSample()
     {
-        // Provisional analogue profile from Claude's calibration: LP4 3kHz, HP2 120Hz.
+        // Provisional analogue profile used for calibration: LP4 3kHz, HP2 120Hz.
         // Butterworth biquads, maintaining filter history across all IO calls and frames.
         struct Biquad { double b0,b1,b2,a1,a2; };
         static const std::array<Biquad,3> coeff = [] {
