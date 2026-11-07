@@ -16,7 +16,7 @@ The documented Ediciel board has **one RCA audio connector** and a separate **tw
 
 At the heart of the speech-generation technology is the **Philips MEA8000**, a formant-based speech synthesizer. Rather than storing whole sentences as sampled audio, it produces speech from compact control frames describing pitch, amplitude and vocal resonances. The MEA8000 uses a voiced or noise excitation source and four resonant filters.
 
-This project recreates the **card and speech chip behavior** in software, so that historical Apple II applications can use a simulated Porte-Parole. The emulation was implemented with **Codex** for an AppleWin fork, independently of the separate **Vox Machina application** developed with Claude.
+This project recreates the **card and speech chip behavior** in software, so that historical Apple II applications can use a simulated Porte-Parole. The emulator implementation was developed for an AppleWin fork.
 
 ### Period references
 
