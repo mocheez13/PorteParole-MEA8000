@@ -56,4 +56,4 @@ Target upstream revision: `4a43bcdb8e1cb908662f4c270ca84f309a97802f`. Apply the 
 
 With a compatible build, the original test launch used `-model apple2e -s4 porteparole` (Porte-Parole in slot 4). Behavior in another slot depends on the software's slot addressing.
 
-**Status:** testable draft for review; not yet confirmed ready for public release. See `LICENSING-REVIEW.md` and `INCOMPLETE-EXPORT.md`.
+**Status:** experimental source release; portable unit tests and patch applicability have been checked. A complete Windows AppleWin build and hardware-level fidelity remain unverified. The GPLv2 license text is provided in `LICENSE`; see `LICENSING-REVIEW.md` for attribution/provenance limits and `INCOMPLETE-EXPORT.md` for missing integration test material.
