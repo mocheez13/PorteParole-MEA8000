@@ -1,0 +1,41 @@
+name: Verify MEA8000 and AppleWin patch
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  core-regressions:
+    name: C++14 regression tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [g++, clang++]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run tests
+        shell: bash
+        env:
+          CXX: ${{ matrix.compiler }}
+        run: |
+          "$CXX" -std=c++14 -O2 -Wall -Wextra -Isrc tests/TestMea8000.cpp -o test_mea8000
+          ./test_mea8000
+
+  applewin-patch:
+    name: AppleWin patch applies (no integrated build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch exact upstream AppleWin revision
+        shell: bash
+        run: |
+          git clone --filter=blob:none --no-checkout https://github.com/AppleWin/AppleWin.git /tmp/applewin
+          git -C /tmp/applewin checkout 4a43bcdb8e1cb908662f4c270ca84f309a97802f
+      - name: Validate patch and source package
+        shell: bash
+        run: |
+          git -C /tmp/applewin apply --check "$GITHUB_WORKSPACE/applewin/AppleWin-integration.patch"
+          for f in Mea8000.h PorteParole.cpp PorteParole.h; do
+            test -s "src/$f"
+          done
