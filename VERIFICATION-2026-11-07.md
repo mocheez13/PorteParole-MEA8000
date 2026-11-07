@@ -1,0 +1,39 @@
+# Verification report — 2026-11-07
+
+This is an evidence-based check of the **private** repository. It does **not** certify all integration behavior or third-party licensing.
+
+## Verified
+
+- Repository: `mocheez13/PorteParole-MEA8000`, private; source, test, documentation and AppleWin patch files are present.
+- Core `src/Mea8000.h`: compiled and ran `tests/TestMea8000.cpp` on Linux using GCC with `-std=c++14 -O2`; result: **PASS: 187 MEA8000 checks**.
+- Same tests compiled with Clang, `-std=c++14 -Wall -Wextra -pedantic -O1 -fsanitize=address,undefined`; result: **PASS: 187 MEA8000 checks** with no sanitizer diagnostics in this run.
+- `applewin/AppleWin-integration.patch`: Git parses it and reports changes across **9 files**. Compared its **18 original-context hunks** line by line against the actual contents of those nine files at upstream AppleWin commit `4a43bcdb8e1cb908662f4c270ca84f309a97802f`; **all 18 matched**. This provides strong evidence it applies to that commit but is **not** a successful Windows compilation or an on-machine integration test.
+- License: upstream AppleWin provides GNU GPL version 2 license text, and all five exported C++ source files contain `SPDX-License-Identifier: GPL-2.0-or-later`.
+
+## Still unverified
+
+1. Clean Windows checkout: actual `git apply --check`, patch application, Win32 build, and runtime audio behavior with slot 4. Do this on a clean checkout using the exact upstream commit.
+2. Provenance: the project notes credit original Ediciel/Philips documentation, earlier Claude `mea8000.py` material, and conceptual comparison with MAME. They assert the C++ core was written for this prototype and links no MAME binary. **This is not enough to independently certify original authorship or rule out source adaptation.**
+3. Rights and complete notices: independent license compliance review needed before any public release. Do not simply copy a new license over the existing source notices without checking the original contributions.
+4. The original export omitted several auxiliary test scripts and data described in its documentation; full integration tests have not been reproduced here.
+
+## Suggested reproduction commands
+
+On Windows (PowerShell), in a **separate clean checkout** of AppleWin:
+
+```powershell
+git checkout 4a43bcdb8e1cb908662f4c270ca84f309a97802f
+git apply --check "C:\path\to\AppleWin-integration.patch"
+git apply "C:\path\to\AppleWin-integration.patch"
+# Copy src/Mea8000.h, src/PorteParole.cpp, src/PorteParole.h into source/
+# Build AppleWin Release Win32 using the relevant installed Visual Studio toolchain
+```
+
+Use only copies; do not overwrite the working Vox Machina or DS:3 environments.
+
+## Third-party reference sources
+
+- [AppleWin main repository](https://github.com/AppleWin/AppleWin)
+- [MAME MEA8000 source](https://sources.debian.org/src/mame/0.289%2Bdfsg1-1/src/devices/sound/mea8000.cpp) — attributed to Antoine Miné, BSD-3-Clause; **not proof** that this repository copied or did not copy it.
+
+**Release status: keep private until provenance and a clean Win32 integration build are confirmed.**
