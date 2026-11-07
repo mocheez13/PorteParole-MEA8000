@@ -13,7 +13,7 @@ This is an evidence-based check of the **private** repository. It does **not** c
 ## Still unverified
 
 1. Clean Windows checkout: actual `git apply --check`, patch application, Win32 build, and runtime audio behavior with slot 4. Do this on a clean checkout using the exact upstream commit.
-2. Provenance: the project notes credit original Ediciel/Philips documentation, earlier Claude `mea8000.py` material, and conceptual comparison with MAME. They assert the C++ core was written for this prototype and links no MAME binary. **This is not enough to independently certify original authorship or rule out source adaptation.**
+2. Provenance: the project owner clarifies that **Claude worked only on the Vox Machina application software and did not develop the Porte-Parole card emulation**. The AppleWin card and MEA8000 emulation were developed through Codex. Older project documentation mentions Claude's earlier software materials, but those references alone do not establish code reuse in the emulator. The original Ediciel/Philips documentation and MAME are cited as technical references. **The exact third-party code provenance still requires source-level verification before public redistribution.**
 3. Rights and complete notices: independent license compliance review needed before any public release. Do not simply copy a new license over the existing source notices without checking the original contributions.
 4. The original export omitted several auxiliary test scripts and data described in its documentation; full integration tests have not been reproduced here.
 
