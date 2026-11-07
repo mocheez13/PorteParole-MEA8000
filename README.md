@@ -10,6 +10,10 @@
 
 The supplied software converted typed French text into audible speech and allowed users to edit speech parameters graphically. Speech could be embedded into other Apple II programs; the package also offered ways to explore expressive intonation, musical notes and sound effects. The manufacturer's period advertisement presented it as a way to give the Apple a virtually unlimited French vocabulary.
 
+### Audio connections on the Ediciel board
+
+The documented Ediciel board has **one RCA audio connector** and a separate **two-pin connector for the Apple II internal speaker** (hardware connection identified by the project owner). These should not be described as two RCA outputs. The separate board marked `SYNT VOC`, photographed during this project, differs in layout; its two metal connectors should not be assumed to have the same functions without checking their wiring.
+
 At the heart of the speech-generation technology is the **Philips MEA8000**, a formant-based speech synthesizer. Rather than storing whole sentences as sampled audio, it produces speech from compact control frames describing pitch, amplitude and vocal resonances. The MEA8000 uses a voiced or noise excitation source and four resonant filters.
 
 This project recreates the **card and speech chip behavior** in software, so that historical Apple II applications can use a simulated Porte-Parole. The emulation was implemented with **Codex** for an AppleWin fork, independently of the separate **Vox Machina application** developed with Claude.
