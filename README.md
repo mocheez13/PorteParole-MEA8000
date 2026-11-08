@@ -26,7 +26,7 @@ This project recreates the **card and speech chip behavior** in software, so tha
 
 - *Golden*, no. 10, November 1984, p. 30-33: contemporary review, commercial availability, prices and speech editor. [Digitized issue](https://mirrors.apple2.org.za/ftp.apple.asimov.net/documentation/magazines/golden/golden10.pdf).
 - Ediciel period advertising/catalogue: original product description, French text-to-speech, programming use and graphical voice editor. [Period catalogue scan](https://www.mocagh.org/sir-tech/ediciel-catalog.pdf).
-- *Haut-Parleur*, no. 1722, November 1985, p. 91: technical description of MEA8000 control parameters. [Magazine scan](https://retronik.silicium.org/DOCUMENTS/revues/haut-parleur/1985/HP1722_11-1985.pdf).
+- *Haut-Parleur*, no. 1722, November 1985, p. 85: technical description of MEA8000 control parameters. [Magazine scan](https://retronik.silicium.org/DOCUMENTS/revues/haut-parleur/1985/HP1722_11-1985.pdf).
 - [Philips MEA8000 technical background](https://www.wide-dot.com/mea8000.html): formant synthesis and further technical references.
 
 ## Preservation project
