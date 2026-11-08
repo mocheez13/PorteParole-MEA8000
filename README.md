@@ -16,7 +16,7 @@ The supplied software converted typed French text into audible speech and allowe
 
 ### Audio connections on the Ediciel board
 
-The documented Ediciel board has **one RCA audio connector** and a separate **two-pin connector for the Apple II internal speaker** (hardware connection identified by the project owner). These should not be described as two RCA outputs.
+The documented Ediciel board has **one RCA audio connector** and a separate **two-pin connector for the Apple II internal speaker** (hardware connection identified by the project owner).
 
 At the heart of the speech-generation technology is the **Philips MEA8000**, a formant-based speech synthesizer. Rather than storing whole sentences as sampled audio, it produces speech from compact control frames describing pitch, amplitude and vocal resonances. The MEA8000 uses a voiced or noise excitation source and four resonant filters.
 
